@@ -1,0 +1,12 @@
+{
+  "name": "flatiron",
+  "description": "An elegant blend of convention and configuration for building apps in Node.js and the browser",
+  "version": "0.0.0",
+  "author": "Charlie Robbins <charlie.robbins@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/flatiron/flatiron.git" 
+  },
+  "main": "./lib/flatiron",
+  "engines": { "node": ">= 0.4.0" }
+}
