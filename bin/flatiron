@@ -1,0 +1,43 @@
+#!/usr/local/bin/node
+
+var optimist = require('optimist');
+
+var argv = optimist.options({
+  watch: {
+    alias: 'w',
+    description: 'Watches the current directory for changes to files and restarts',
+    boolean: true
+  }
+}).argv;
+
+var actions = {
+  start: 'Starts the application in the current directory',
+  stop: 'Stops the application in the current directory'
+};
+
+function listActions () {
+  var list = [
+    'Actions:'
+  ];
+  
+  Object.keys(actions).forEach(function (action) {
+    list.push(['', action, actions[action]].join('  '));
+  });
+  
+  return list.concat('').join('\n');
+}
+
+//
+// If we should print the help for this 
+// script then do so.
+//
+if (argv.h || argv.help || !argv._.length) {
+  console.log([
+    'flatiron: An elegant blend of convention and configuration for building apps in Node.js and the browser',
+    ''
+  ].join('\n'));
+  
+  console.log(listActions());
+  console.log(optimist.help());
+  return;
+}
