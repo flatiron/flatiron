@@ -1,0 +1,7 @@
+{
+  "directories": {
+    "app": "ROOT/app",
+    "config": "ROOT/config",
+    "test": "ROOT/test"
+  }
+}
