@@ -14,6 +14,7 @@
     "broadway": "x.x.x",
     "mime": "1.2.x",
     "optimist": "0.2.x",
+    "prompt": "0.1.x >=0.1.9"
     "resourceful": "x.x.x"
   },
   "main": "./lib/flatiron",
