@@ -17,7 +17,8 @@
     "node-static": "0.5.x",
     "optimist": "0.2.x",
     "prompt": "0.1.x >=0.1.9",
-    "resourceful": "x.x.x"
+    "resourceful": "x.x.x",
+    "sugarskull": "x.x.x"
   },
   "main": "./lib/flatiron",
   "engines": { "node": ">= 0.4.0" }
