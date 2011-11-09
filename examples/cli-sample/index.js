@@ -2,7 +2,9 @@ console.time('start');
 var flatiron = require('../../lib/flatiron'),
     app = flatiron.app;
 
-app.use(flatiron.plugins.cli, {});
+app.use(flatiron.plugins.cli, {
+  dir: __dirname
+});
 
 app.cmd('app start', function () {
   console.timeEnd('start');
