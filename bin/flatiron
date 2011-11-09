@@ -1,10 +1,21 @@
 #!/usr/bin/env node
 
 var flatiron = require('../lib/flatiron'),
+    path = require('path'),
     app = flatiron.app;
 
+var actions = {
+  create: 'Creates an empty template for a flatiron application'
+};
+
 app.use(flatiron.plugins.cli, {
-  dir: path.join(__dirname, 'commands');
+  dir: path.join(__dirname, 'commands'),
+  usage: [
+    'flatiron',
+    '',
+  ].concat(Object.keys(actions).map(function(key){
+    return key + ' - ' + actions[key]  
+  }))
 });
 
 if (require.main === module) {
@@ -12,9 +23,3 @@ if (require.main === module) {
     app.start();
   });
 }
-
-var actions = {
-  start: 'Starts the application in the current directory',
-  stop: 'Stops the application in the current directory',
-  create: 'Creates an empty template for a flatiron application'
-};
