@@ -15,7 +15,9 @@
     "broadway": "x.x.x",
     "optimist": "0.2.x",
     "prompt": "0.1.x >=0.1.9",
-    "sugarskull": "x.x.x"
+    "sugarskull": "x.x.x",
+    "mkdirp": "0.1.x",
+    "pkginfo": "0.2.x"
   },
   "main": "./lib/flatiron",
   "engines": { "node": ">= 0.4.0" }
