@@ -18,6 +18,6 @@
 * [Resourceful](https://github.com/flatiron/resourceful)
 * [And More](https://github.com/flatiron)!
 
-# What more? Check back tomorrow.
+# Want more? Check back tomorrow.
 
 ### This is only the beginning.
