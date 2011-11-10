@@ -26,7 +26,7 @@ var create = module.exports = function create(name) {
           
           var template = [
             'var flatiron = require(\'flatiron\'),',
-            ' path = require(\'path\')',
+            ' path = require(\'path\'),',
             ' app = flatiron.app;',
             '',
             'app.use(flatiron.plugins.cli, {',
