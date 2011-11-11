@@ -21,5 +21,8 @@
     "pkginfo": "0.2.x"
   },
   "main": "./lib/flatiron",
+  "bin": {
+    "flatiron": "./bin/flatiron"
+  },
   "engines": { "node": ">= 0.4.0" }
 }
