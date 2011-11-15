@@ -1,4 +1,5 @@
 var print = module.exports = function print(msg) {
-  this.tty.log(msg);
+  console.log(msg);
 }
 print.usage = 'Print out a <msg>';
+
