@@ -13,7 +13,7 @@ var create = module.exports = function create(name) {
             private: true,
             version: '0.0.0',
             dependencies: {
-              flatiron: require('pkginfo', require('../../lib/flatiron'), 'version').version
+              flatiron: JSON.parse(fs.readFileSync(__dirname + '/../../package.json', 'utf8')).version
             },
             devDependencies: {
               vows: '0.5.x'
