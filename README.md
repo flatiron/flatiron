@@ -13,7 +13,7 @@
 
 * [Broadway](https://github.com/flatiron/broadway)
 * [Union](https://github.com/flatiron/union)
-* [Sugarskull](https://github.com/flatiron/sugarskull)
+* [Director](https://github.com/flatiron/director)
 * [Plates](https://github.com/flatiron/plates)
 * [Resourceful](https://github.com/flatiron/resourceful)
 * [And More](https://github.com/flatiron)!
