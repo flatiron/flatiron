@@ -17,8 +17,7 @@
     "prompt": "0.1.x >=0.1.9",
     "sugarskull": "x.x.x",
     "mkdirp": "0.1.x",
-    "winston": "0.5.x",
-    "pkginfo": "0.2.x"
+    "winston": "0.5.x"
   },
   "main": "./lib/flatiron",
   "bin": {
