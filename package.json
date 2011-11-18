@@ -14,7 +14,7 @@
     "broadway": "x.x.x",
     "optimist": "0.2.x",
     "prompt": "0.1.x >=0.1.9",
-    "sugarskull": "x.x.x",
+    "director": "x.x.x",
     "pkginfo": "0.2.x"
   },
   "main": "./lib/flatiron",
