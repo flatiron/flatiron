@@ -11,13 +11,10 @@
     "url": "http://github.com/flatiron/flatiron.git" 
   },
   "dependencies": {
-    "async": "0.1.x",
     "broadway": "x.x.x",
     "optimist": "0.2.x",
     "prompt": "0.1.x >=0.1.9",
     "sugarskull": "x.x.x",
-    "mkdirp": "0.1.x",
-    "winston": "0.5.x",
     "pkginfo": "0.2.x"
   },
   "main": "./lib/flatiron",
