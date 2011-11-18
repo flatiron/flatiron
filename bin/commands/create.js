@@ -37,7 +37,7 @@ var create = module.exports = function create(name) {
       ' app = flatiron.app;',
       '',
       'app.use(flatiron.plugins.cli, {',
-      '  dir: path.join(__dirname,\'..\',\'lib\',\'commands\'),',
+      '  dir: path.join(__dirname,\'lib\',\'commands\'),',
       '  usage: \'Empty Flatiron Application, please fill out commands\'',
       '});',
       '',
