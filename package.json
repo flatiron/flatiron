@@ -11,11 +11,11 @@
     "url": "http://github.com/flatiron/flatiron.git" 
   },
   "dependencies": {
-    "broadway": "x.x.x",
-    "optimist": "0.2.x",
-    "prompt": "0.1.x >=0.1.9",
-    "director": "x.x.x",
-    "pkginfo": "0.2.x"
+    "broadway": "0.1.2",
+    "optimist": "0.2.8",
+    "prompt": "0.1.10",
+    "director": "1.0.6",
+    "pkginfo": "0.2.2"
   },
   "main": "./lib/flatiron",
   "bin": {
