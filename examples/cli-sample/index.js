@@ -20,6 +20,4 @@ app.cmd('app start', function () {
   })
 })
 
-app.init(function () {
-  app.start();
-});
+app.start();
