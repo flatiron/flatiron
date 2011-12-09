@@ -19,7 +19,5 @@ app.use(flatiron.plugins.cli, {
 });
 
 if (require.main === module) {
-  app.init(function () {
-    app.start();
-  });
+  app.start();
 }

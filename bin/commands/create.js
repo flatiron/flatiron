@@ -1,20 +1,27 @@
-var common = require('broadway').common,
-    mkdirp = common.mkdirp,
-    directories = common.directories,
+var fs = require('fs'),
     path = require('path'),
-    fs = require('fs');
+    common = require('broadway').common,
+    directories = common.directories,
+    app = require('../../lib/flatiron').app;
 
-var create = module.exports = function create(name) {
+var create = module.exports = function create(name, callback) {
   name = name || 'flatiron-app';
 
-  var createDirs = directories.normalize(process.cwd(), {
+  var root = path.join(process.cwd(), name),
+      dirs;
+  
+  dirs = directories.normalize(root, {
     config: '#ROOT/config',
     lib: '#ROOT/lib',
     commands: '#ROOT/lib/commands',
     test: '#ROOT/test'
   });
   
-  directories.create(createDirs, function() {
+  Object.keys(dirs).forEach(function (name) {
+    app.log.info('Creating directory ' + name.grey);
+  });
+  
+  directories.create(dirs, function() {
     var pkg = {
       name: name,
       private: true,
@@ -26,15 +33,15 @@ var create = module.exports = function create(name) {
         vows: '0.5.x'
       },
       scripts: {
-        test: 'vows test',
+        test: 'vows',
         start: 'node app.js'
       }
     }
     
     var template = [
       'var flatiron = require(\'flatiron\'),',
-      ' path = require(\'path\')',
-      ' app = flatiron.app;',
+      '    path = require(\'path\')',
+      '    app = flatiron.app;',
       '',
       'app.use(flatiron.plugins.cli, {',
       '  dir: path.join(__dirname,\'lib\',\'commands\'),',
@@ -48,12 +55,20 @@ var create = module.exports = function create(name) {
       '}'
     ].join('\n') + '\n';
     
-    fs.writeFile('package.json', JSON.stringify(pkg, null, ' ') + '\n');
-    fs.writeFile('app.js', template);
-    fs.writeFile(path.join('lib', name + '.js'), '');
+    app.log.info('Writing package.json');
+    fs.writeFile(path.join(root, 'package.json'), JSON.stringify(pkg, null, ' ') + '\n');
+    
+    app.log.info('Writing app.js');
+    fs.writeFile(path.join(root, 'app.js'), template);
+    
+    app.log.info('Writing lib/' + name + '.js');
+    fs.writeFile(path.join(root, 'lib', name + '.js'), '');
+    
+    app.log.info('Application ' + name.magenta + ' is now ready');
+    callback();
   });
 }
 
 create.usage = [
   'create :appname - generate a flatiron skeleton application'
-]
+];
