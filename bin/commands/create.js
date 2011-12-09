@@ -3,7 +3,7 @@ var common = require('broadway').common,
     directories = common.directories,
     path = require('path'),
     fs = require('fs');
-  
+
 var create = module.exports = function create(name) {
   name = name || 'flatiron-app';
 
@@ -53,6 +53,7 @@ var create = module.exports = function create(name) {
     fs.writeFile(path.join('lib', name + '.js'), '');
   });
 }
+
 create.usage = [
   'create :appname - generate a flatiron skeleton application'
 ]
