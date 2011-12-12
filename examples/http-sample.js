@@ -1,7 +1,6 @@
 var util = require('util'),
-    flatiron = require('../../lib/flatiron'),
-    app = flatiron.app,
-    missiles = {};
+    flatiron = require('../lib/flatiron'),
+    app = flatiron.app;
 
 app.use(flatiron.plugins.http);
 
