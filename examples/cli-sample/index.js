@@ -2,6 +2,10 @@ console.time('start');
 var flatiron = require('../../lib/flatiron'),
     app = flatiron.app;
 
+require('pkginfo')(module, 'version');
+
+app.version = exports.version;
+
 app.use(flatiron.plugins.cli, {
   dir: __dirname,
   usage: [
@@ -9,7 +13,8 @@ app.use(flatiron.plugins.cli, {
     '',
     'app start - print a prompt and arguments',
     'print <msg> - echo a message'
-  ]
+  ],
+  version: true
 });
 
 app.cmd('app start', function () {
