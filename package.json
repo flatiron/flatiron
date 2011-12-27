@@ -25,5 +25,9 @@
   "bin": {
     "flatiron": "./bin/flatiron"
   },
+  "scripts": {
+    "test": "vows --spec --isolate"
+  },
   "engines": { "node": ">= 0.4.0" }
 }
+
