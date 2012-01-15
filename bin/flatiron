@@ -18,6 +18,10 @@ app.use(flatiron.plugins.cli, {
   }))
 });
 
+app.cmd('version', function () {
+  console.log('flatiron ' + flatiron.version);
+});
+
 if (require.main === module) {
   app.start();
 }
