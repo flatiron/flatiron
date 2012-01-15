@@ -1,4 +1,4 @@
-# [flatiron](http://flatironjs.org)
+# [flatiron](http://flatironjs.org) [![Build Status](https://secure.travis-ci.org/flatiron/flatiron.png)](http://travis-ci.org/flatiron/flatiron)
 
 *An elegant blend of convention and configuration for building apps in Node.js and the browser*
 
