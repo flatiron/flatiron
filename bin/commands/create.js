@@ -30,7 +30,7 @@ var create = module.exports = function create(name, callback) {
         flatiron: JSON.parse(fs.readFileSync(__dirname + '/../../package.json')).version
       },
       devDependencies: {
-        vows: '0.5.x'
+        vows: '0.6.x'
       },
       scripts: {
         test: 'vows',
