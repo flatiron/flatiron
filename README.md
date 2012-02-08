@@ -18,6 +18,24 @@
 * [Resourceful](https://github.com/flatiron/resourceful)
 * [And More](https://github.com/flatiron)!
 
-# Want more? Check back tomorrow.
+## Installation
 
-### This is only the beginning.
+### Installing npm (node package manager)
+```
+  curl http://npmjs.org/install.sh | sh
+```
+
+### Installing flatiron
+```
+  [sudo] npm install flatiron
+```
+
+## Run Tests
+Tests are written in vows and give complete coverage of all APIs and storage engines.
+
+``` bash
+  $ npm test
+```
+
+#### Author: [Nodejitsu Inc.](http://nodejitsu.com)
+#### License: MIT
