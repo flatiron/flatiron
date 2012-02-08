@@ -37,5 +37,5 @@ Tests are written in vows and give complete coverage of all APIs and storage eng
   $ npm test
 ```
 
-#### Author: [Charlie Robbins](http://nodejitsu.com)
+#### Author: [Nodejitsu Inc.](http://nodejitsu.com)
 #### License: MIT
