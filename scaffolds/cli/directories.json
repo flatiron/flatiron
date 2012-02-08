@@ -1,0 +1,6 @@
+{
+  "config": "#ROOT/config",
+  "lib": "#ROOT/lib",
+  "commands": "#ROOT/lib/commands",
+  "test": "#ROOT/test"
+}

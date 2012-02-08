@@ -9,19 +9,14 @@ var actions = {
 };
 
 app.use(flatiron.plugins.cli, {
-  dir: path.join(__dirname, 'commands'),
+  dir: path.join(__dirname, '..', 'lib', 'flatiron', 'cli'),
   usage: [
     'flatiron',
     '',
+    'Commands:'
   ].concat(Object.keys(actions).map(function(key){
-    return key + ' - ' + actions[key]  
+    return '  ' + key + ' - ' + actions[key]  
   }))
 });
 
-app.cmd('version', function () {
-  console.log('flatiron ' + flatiron.version);
-});
-
-if (require.main === module) {
-  app.start();
-}
+app.start();
