@@ -1,7 +1,7 @@
 {
   "name": "flatiron",
   "description": "An elegant blend of convention and configuration for building apps in Node.js and the browser",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "author": "Nodejitsu Inc <info@nodejitsu.com>",
   "contributors": [
     { "name": "Charlie Robbins", "email": "charlie@nodejitsu.com" }
@@ -13,13 +13,13 @@
   "dependencies": {
     "broadway": "0.1.9",
     "optimist": "0.3.1",
-    "prompt": "0.1.11",
-    "director": "1.0.8",
-    "pkginfo": "0.2.2",
-    "utile": "0.0.x"
+    "prompt": "0.1.12",
+    "director": "1.0.9-1",
+    "pkginfo": "0.2.3",
+    "utile": "0.0.10"
   },
   "devDependencies": {
-    "vows": "0.6.x"
+    "vows": "0.6.1"
   },
   "main": "./lib/flatiron",
   "bin": {
@@ -30,4 +30,3 @@
   },
   "engines": { "node": ">= 0.4.0" }
 }
-
