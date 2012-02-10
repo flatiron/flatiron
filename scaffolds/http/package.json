@@ -6,7 +6,7 @@
     "union": "0.1.7"
   },
   "devDependencies": {
-    "api-easy": "0.1.0",
+    "api-easy": "0.3.2",
     "vows": "0.6.1"
   },
   "scripts": {
