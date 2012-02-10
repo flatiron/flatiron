@@ -5,7 +5,8 @@ var flatiron = require('../lib/flatiron'),
     app = flatiron.app;
 
 var actions = {
-  create: 'Creates an empty template for a flatiron application'
+  create: 'Creates an empty template for a flatiron application',
+  generate: 'Generate new code for a flatiron application',
 };
 
 app.use(flatiron.plugins.cli, {
@@ -15,13 +16,14 @@ app.use(flatiron.plugins.cli, {
     '',
     'Commands:'
   ].concat(Object.keys(actions).map(function(key){
-    return '  ' + key + ' - ' + actions[key]  
+    return '  ' + key + ' - ' + actions[key];
   }))
 });
 
 //
-// Alias `flatiron create` to `flatiron new`.
+// Some aliases
 //
 app.alias('new', 'create');
+app.alias('g', 'generate');
 
 app.start();
