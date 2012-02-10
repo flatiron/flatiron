@@ -1,0 +1,4 @@
+{
+  "app.js": "#ROOT/app.js",
+  "lib/index.js": "#ROOT/lib/index.js"
+}
