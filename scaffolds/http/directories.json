@@ -1,5 +1,16 @@
 {
+  "app": "#ROOT/app",
+  "app/assets": "#ROOT/app/assets",
+  "app/assets/images": "#ROOT/app/assets/images",
+  "app/assets/stylesheets": "#ROOT/app/assets/stylesheets",
+  "app/assets/javascripts": "#ROOT/app/assets/javascripts",
+  "app/resources": "#ROOT/app/resources",
+  "app/presenters": "#ROOT/app/presenters",
+  "app/views": "#ROOT/app/views",
+  "app/views/layouts": "#ROOT/app/views/layouts",
   "config": "#ROOT/config",
+  "config/environments": "#ROOT/config/environments",
   "lib": "#ROOT/lib",
+  "log": "#ROOT/log",
   "test": "#ROOT/test"
 }
