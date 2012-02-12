@@ -9,5 +9,4 @@ app.use(flatiron.plugins.cli, {
   usage: 'Empty Flatiron Application, please fill out commands'
 });
 
-
 app.start();

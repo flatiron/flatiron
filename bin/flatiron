@@ -15,7 +15,7 @@ app.use(flatiron.plugins.cli, {
     '',
     'Commands:'
   ].concat(Object.keys(actions).map(function(key){
-    return '  ' + key + ' - ' + actions[key]  
+    return '  ' + key + ' - ' + actions[key];
   }))
 });
 
