@@ -9,7 +9,7 @@
   "app/views": "#ROOT/app/views",
   "app/views/layouts": "#ROOT/app/views/layouts",
   "config": "#ROOT/config",
-  "config/environments": "#ROOT/config/environments",
+  "config/env": "#ROOT/config/env",
   "lib": "#ROOT/lib",
   "log": "#ROOT/log",
   "test": "#ROOT/test"
