@@ -10,14 +10,15 @@ app.use(flatiron.plugins.http, {
   before: [function (req, res) {
     
     fs.readFile(__dirname + '/index.html', function (err, data) {
-		  if (err) {
+		  
+      if (err) {
 		    res.writeHead(500);
 		    return res.end('Error loading index.html');
 		  }
 
 		  res.writeHead(200);
 		  res.end(data);
-	 
+	    
     });
 
   }]
