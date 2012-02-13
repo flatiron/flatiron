@@ -8,7 +8,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/flatiron/flatiron.git" 
+    "url": "http://github.com/flatiron/flatiron.git"
   },
   "dependencies": {
     "broadway": "0.1.10",
@@ -16,6 +16,7 @@
     "prompt": "0.1.12",
     "director": "1.0.9-1",
     "pkginfo": "0.2.3",
+    "node-inflect": "0.1.1",
     "utile": "0.0.10"
   },
   "devDependencies": {
