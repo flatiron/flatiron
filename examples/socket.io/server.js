@@ -6,19 +6,21 @@ var flatiron = require('../../lib/flatiron'),
     app      = flatiron.app;
 
 app.use(flatiron.plugins.http, {
-    before: [function (req, res) {
+  
+  before: [function (req, res) {
+    
+    fs.readFile(__dirname + '/index.html', function (err, data) {
+		  if (err) {
+		    res.writeHead(500);
+		    return res.end('Error loading index.html');
+		  }
 
-        fs.readFile(__dirname + '/index.html', function (err, data) {
-		        if (err) {
-		            res.writeHead(500);
-		            return res.end('Error loading index.html');
-		        }
+		  res.writeHead(200);
+		  res.end(data);
+	 
+    });
 
-		        res.writeHead(200);
-		        res.end(data);
-	      });
-
-    }]
+  }]
 });
 
 
@@ -34,8 +36,8 @@ app.start(8080);
 var io = require('socket.io').listen(app.server);
 
 io.sockets.on('connection', function(socket) {
-    socket.emit('news', { hello: 'world' });
-    socket.on('my other event', function(data) {
-        console.log(data);
-    });
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function(data) {
+    console.log(data);
+  });
 });
