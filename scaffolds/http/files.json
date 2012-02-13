@@ -1,3 +1,5 @@
 {
-  "app.js": "#ROOT/app.js"
+  "app.js": "#ROOT/app.js",
+  "app/assets/stylesheets/application.css": "#ROOT/app/assets/stylesheets/application.css",
+  "app/assets/javascripts/application.js": "#ROOT/app/assets/javascripts/application.js"
 }
