@@ -19,4 +19,9 @@ app.use(flatiron.plugins.cli, {
   }))
 });
 
+//
+// Alias `flatiron create` to `flatiron new`.
+//
+app.alias('new', 'create');
+
 app.start();
