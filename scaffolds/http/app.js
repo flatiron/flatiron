@@ -4,6 +4,7 @@ var flatiron = require('flatiron'),
 
 app.config.file({ file: path.join(__dirname, 'config', 'config.json') });
 
+app.use(flatiron.plugins.resourceful, { dir: path.join(__dirname, 'app', 'resources') });
 app.use(flatiron.plugins.http);
 
 app.router.get('/', function () {
