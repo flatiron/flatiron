@@ -16,7 +16,7 @@
     "prompt": "0.1.12",
     "director": "1.0.9-1",
     "pkginfo": "0.2.3",
-    "node-inflect": "0.1.1",
+    "node-inflect": "0.1.2",
     "utile": "0.0.10"
   },
   "devDependencies": {
