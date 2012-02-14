@@ -1,1 +1,1 @@
-/* All your #UNDERSCOREPLURALIZED related javascripts go here */
+/* All your #NAME related javascripts go here */
