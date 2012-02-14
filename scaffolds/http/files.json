@@ -1,5 +1,17 @@
 {
+  ".gitignore": "#ROOT/.gitignore",
   "app.js": "#ROOT/app.js",
-  "app/assets/stylesheets/application.css": "#ROOT/app/assets/stylesheets/application.css",
-  "app/assets/javascripts/application.js": "#ROOT/app/assets/javascripts/application.js"
+  "app/assets/images/flatiron.png": "#ROOT/app/assets/images/flatiron.png",
+  "app/assets/stylesheets/app.css": "#ROOT/app/assets/stylesheets/app.css",
+  "app/assets/javascripts/app.js": "#ROOT/app/assets/javascripts/app.js",
+  "app/presenters/.gitkeep": "#ROOT/app/presenters/.gitkeep",
+  "app/resources/.gitkeep": "#ROOT/app/resources/.gitkeep",
+  "app/views/layouts/app.html": "#ROOT/app/views/layouts/app.html",
+  "config/config.json": "#ROOT/config/config.json",
+  "config/env/development.json": "#ROOT/config/env/development.json",
+  "config/env/production.json": "#ROOT/config/env/productions.json",
+  "lib/.gitkeep": "#ROOT/lib/.gitkeep",
+  "log/.gitkeep": "#ROOT/log/.gitkeep",
+  "test/.gitkeep": "#ROOT/test/.gitkeep",
+  "tmp/.gitkeep": "#ROOT/tmp/.gitkeep"
 }

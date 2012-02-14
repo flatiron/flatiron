@@ -12,5 +12,6 @@
   "config/env": "#ROOT/config/env",
   "lib": "#ROOT/lib",
   "log": "#ROOT/log",
-  "test": "#ROOT/test"
+  "test": "#ROOT/test",
+  "tmp": "#ROOT/tmp"
 }

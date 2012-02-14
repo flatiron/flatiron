@@ -1,7 +1,7 @@
-var resourceful = require('resourceful');
+var app = require('flatiron').app;
 
-var #CAMEL = resourceful.define('#NAME', function () {
-  this.use('couchdb');
+var #CAMEL = app.resource.define('#NAME', function () {
+  this.use(app.config.db.engine, app.config.db.options);
 
 #PROP
   this.timestamps();
