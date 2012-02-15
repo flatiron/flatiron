@@ -1,0 +1,36 @@
+{
+  "dirs": [
+    "app",
+    "app/assets",
+    "app/assets/images",
+    "app/assets/stylesheets",
+    "app/assets/javascripts",
+    "app/resources",
+    "app/presenters",
+    "app/views",
+    "app/views/layouts",
+    "config",
+    "config/env",
+    "lib",
+    "log",
+    "test",
+    "tmp"
+  ],
+  "files": [
+    ".gitignore",
+    "app.js",
+    "app/assets/images/flatiron.png",
+    "app/assets/stylesheets/app.css",
+    "app/assets/javascripts/app.js",
+    "app/presenters/.gitkeep",
+    "app/resources/.gitkeep",
+    "app/views/layouts/app.html",
+    "config/config.json",
+    "config/env/development.json",
+    "config/env/production.json",
+    "lib/.gitkeep",
+    "log/.gitkeep",
+    "test/.gitkeep",
+    "tmp/.gitkeep"
+  ]
+}
