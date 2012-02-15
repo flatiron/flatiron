@@ -1,0 +1,12 @@
+{
+  "dirs": [
+    "config",
+    "lib",
+    "lib/commands",
+    "test"
+  ],
+  "files": [
+    "app.js",
+    "lib/index.js"
+  ]
+}
