@@ -28,6 +28,7 @@
     "config/config.json",
     "config/env/development.json",
     "config/env/production.json",
+    "config/routes.js",
     "lib/.gitkeep",
     "log/.gitkeep",
     "test/.gitkeep",
