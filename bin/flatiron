@@ -5,7 +5,8 @@ var flatiron = require('../lib/flatiron'),
     app = flatiron.app;
 
 var actions = {
-  create: 'Creates an empty template for a flatiron application'
+  create: 'Creates an empty template for a flatiron application',
+  version: 'Show flatiron version',
 };
 
 app.use(flatiron.plugins.cli, {
