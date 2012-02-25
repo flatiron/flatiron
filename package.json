@@ -18,7 +18,7 @@
     "pkginfo": "0.2.3"
   },
   "devDependencies": {
-    "vows": "0.6.1"
+    "vows": "0.6.2"
   },
   "main": "./lib/flatiron",
   "bin": {
