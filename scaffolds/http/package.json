@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "resourceful": "0.1.8",
+    "plates": "0.4.5",
     "union": "0.1.7"
   },
   "devDependencies": {

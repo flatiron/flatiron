@@ -5,6 +5,7 @@ var flatiron = require('flatiron'),
 app.config.file({ file: path.join(__dirname, 'config', 'config.json') });
 
 app.use(flatiron.plugins.resourceful, { root: __dirname });
+app.use(flatiron.plguins.plates, { root: __dirname });
 app.use(flatiron.plugins.http);
 
 app.router.get('/', function () {
