@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "resourceful": "0.1.8",
     "union": "0.1.7"
   },
   "devDependencies": {
