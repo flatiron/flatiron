@@ -282,7 +282,7 @@ help:
 help:     This will print "hello <person>"
 ```
 
-### Check ClI Arguments with `app.argv`:
+### Check CLI Arguments with `app.argv`:
 
 Once your app is started, `app.argv` will contain the [optimist](http://github.com/substack/node-optimist)-parsed argv options hash, ready to go!
 
