@@ -142,9 +142,20 @@ app.router.get('/sandwich/:type', function (type) {
 
 This is a [union](https://github.com/flatiron/union) middleware kernel.
 
-### Access The Server with `app.server`:
+### Modify the Server Options with `app.http`:
 
-This is a [union](https://github.com/flatiron/union) middleware kernel.
+This object contains options that are passed to the union server, including `app.http.before`, `app.http.after` and `app.http.headers`.
+
+These properties may be set by passing them through as options:
+
+```js
+app.use(flatiron.plugins.http, {
+  before: [],
+  after: []
+});
+```
+
+You can read more about these options on the [union project page](https://github.com/flatiron/union#readme).
 
 ### Start The Server with `app.start(<host>, port, <callback(err)>)`
 
