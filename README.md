@@ -73,7 +73,7 @@ info:   hello world!
 
 # Usage:
 
-## `flatiron.app`
+## Start With `flatiron.app`:
 
 `flatiron.app` is a [broadway injection container](https://github.com/flatiron/broadway). To be brief, what it does is allow plugins to modify the `app` object directly:
 
