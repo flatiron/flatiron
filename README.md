@@ -99,30 +99,11 @@ Virtually all additional functionality in flatiron comes from broadway plugins, 
 
 `flatiron.app` comes with a [`config`](https://github.com/flatiron/broadway/blob/master/lib/broadway/plugins/config.js) plugin pre-loaded, which adds configuration management courtesy [nconf](https://github.com/flatiron/nconf).
 
-## `flatiron.plugins.http(options)`
+## Create An HTTP Server with `flatiron.plugins.http(options)`:
 
 This plugin adds http serving functionality to your flatiron app by attaching the following properties and methods:
 
-### `app.server`
-
-This is a [union](https://github.com/flatiron/union) middleware kernel.
-
-### `app.http`
-
-This object contains options that are passed to the union server, including `app.http.before`, `app.http.after` and `app.http.headers`.
-
-These properties may be set by passing them through as options:
-
-```js
-app.use(flatiron.plugins.http, {
-  before: [],
-  after: []
-});
-```
-
-You can read more about these options on the [union project page](https://github.com/flatiron/union#readme).
-
-### `app.router`
+### Define Routes with `app.router`:
 
 This is a [director](https://github.com/flatiron/director) router configured to route http requests after the middlewares in `app.http.before` are applied. Example routes include:
 
@@ -156,7 +137,16 @@ app.router.get('/sandwich/:type', function (type) {
 
 `app.router` can also route against regular expressions and more! To learn more about director's advanced functionality, visit director's [project page](https://github.com/flatiron/director#readme).
 
-## `app.start(<host>, port, <callback(err)>)`
+
+### Access The Server with `app.server`:
+
+This is a [union](https://github.com/flatiron/union) middleware kernel.
+
+### Access The Server with `app.server`:
+
+This is a [union](https://github.com/flatiron/union) middleware kernel.
+
+### Start The Server with `app.start(<host>, port, <callback(err)>)`
 
 This method will both call `app.init` (which will call any asynchronous initialization steps on loaded plugins) and start the http server with the given arguments. For example, the following will start your flatiron http server on port 8080:
 
@@ -164,12 +154,228 @@ This method will both call `app.init` (which will call any asynchronous initiali
 app.start(8080);
 ```
 
-## `flatiron.plugins.cli(options)`
+## Create a CLI Application with `flatiron.plugins.cli(options)`
 
 This plugin turns your app into a cli application framework. For example, [jitsu]
 (https://github.com/nodejitsu/jitsu) uses flatiron and the cli plugin.
 
-**More documentation coming soon!**
+Valid options include:
+
+```js
+{
+  "argvOptions": {}, // A configuration hash passed to the cli argv parser.
+  "usage": [ "foo", "bar" ], // A message to show for cli usage. Joins arrays with `\n`.
+  "dir": require('path').join(__dirname, 'lib', 'commands') // A directory with commands to lazy-load
+}
+```
+
+### Add lazy-loaded CLI commands with `options.dir` and `app.commands`:
+
+  Flatiron CLI will automatically lazy-load modules defining commands in the directory specified by `options.dir`. For example:
+
+```js
+// example2.js
+var path = require('path'),
+    flatiron = require('./lib/flatiron'),
+    app = flatiron.app;
+
+app.use(flatiron.plugins.cli, {
+  dir: path.join(__dirname, 'cmds')
+});
+
+app.start();
+```
+
+```js
+// cmd/highfive.js
+var highfive = module.exports = function highfive (person, cb) {
+  this.log.info('High five to ' + person + '!');
+  cb(null);
+};
+```
+
+In the command, you expose a function of arguments and a callback. `this` is set to `app`, and the routing is taken care of automatically.
+
+Here it is in action:
+
+```
+% node example2.js highfive Flatiron 
+info:   High five to Flatiron!
+```
+
+You can also define these commands by adding them directly to `app.commands` yourself:
+
+```
+// example2b.js
+var flatiron = require('./lib/flatiron'),
+    app = flatiron.app;
+
+var path = require('path'),
+    flatiron = require('./lib/flatiron'),
+    app = flatiron.app;
+
+app.use(flatiron.plugins.cli);
+
+app.commands.highfive = function (person, cb) {
+  this.log.info('High five to ' + person + '!');
+  cb(null);
+};
+
+app.start();
+```
+
+```
+% node example2b.js highfive Flatiron 
+info:   High five to Flatiron!
+```
+
+### Define Ad-Hoc Commands With `app.cmd(path, handler)`:
+
+This adds the cli routing path `path` to the app's CLI router, using the [director](https://github.com/flatiron/director) route handler `handler`, aliasing `app.router.on`. `cmd` routes are defined the same way as http routes, except that it uses ` ` (a space) for a delimiter instead of `/`.
+
+For example:
+
+```js
+// example.js
+var flatiron = require('./lib/flatiron'),
+    app = flatiron.app;
+
+app.use(flatiron.plugins.cli, {
+  usage: [
+    'usage: node test.js hello <person>',
+    '',
+    '  This will print "hello <person>"'
+  ]
+});
+
+app.cmd('hello :person', function (person) {
+  app.log.info('hello ' + person + '!');
+});
+
+app.start()
+```
+
+When you run this program correctly, it will say hello:
+
+```bash
+% node example.js hello person
+info:   hello person!
+```
+
+If not, you get a friendly usage message:
+
+```bash
+% node test.js hello
+help:   usage: node test.js hello <person>
+help:
+help:     This will print "hello <person>"
+```
+
+### Check ClI Arguments with `app.argv`:
+
+Once your app is started, `app.argv` will contain the [optimist](http://github.com/substack/node-optimist)-parsed argv options hash, ready to go!
+
+Here's an example:
+
+```js
+// example3.js
+var flatiron = require('./lib/flatiron'),
+    app = flatiron.app;
+
+app.use(flatiron.plugins.cli);
+
+app.start();
+
+app.log.info(JSON.stringify(app.argv));
+```
+
+This prints:
+
+```bash
+% node example3.js
+info:    {"_":[], "$0": "node ./example3.js"}
+```
+
+Awesome!
+
+### Add a Default Help Command with `options.usage`:
+
+When attaching the CLI plugin, just specify options.usage to get a friendly default message for when there aren't any matching routes:
+
+```js
+// example4.js
+var flatiron = require('./lib/flatiron'),
+    app = flatiron.app;
+
+app.use(flatiron.plugins.cli, {
+  usage: [
+    'Welcome to my app!',
+    'Your command didn\'t do anything.',
+    'This is expected.'
+  ]
+});
+
+app.start();
+```
+
+```bash
+% node example4.js 
+help:   Welcome to my app!
+help:   Your command didn't do anything.
+help:   This is expected.
+```
+
+### Start The Application with `app.start(callback)`:
+
+As seen in these examples, starting your app is as easy as `app.start`! this method takes a callback, which is called when an `app.command` completes. Here's a complete example demonstrating this behavior and how it integrates with `options.usage`:
+
+```js
+// example5.js
+var path = require('path'),
+    flatiron = require('./lib/flatiron'),
+    app = flatiron.app;
+
+app.use(flatiron.plugins.cli, {
+  usage: [
+    '`node example5.js error`: Throws an error.',
+    '`node example5.js friendly`: Does not throw an error.'
+  ]
+});
+
+app.commands.error = function (cb) {
+  cb(new Error('I\'m an error!'));
+};
+
+app.commands.friendly = function (cb) {
+  cb(null);
+}
+
+app.start(function (err) {
+  if (err) {
+    app.log.error(err.message || 'You didn\'t call any commands!');
+    app.log.warn('NOT OK.');
+    return process.exit(1);
+  }
+  app.log.info('OK.');
+});
+```
+
+Here's how our app behaves:
+
+```bash
+% node example5.js friendly
+info:   OK.
+
+% node example5.js error
+error:  I'm an error!
+warn:   NOT OK.
+
+% node example5.js
+help:   `node example2b.js error`: Throws an error.
+help:   `node example2b.js friendly`: Does not throw an error.
+error:  You didn't call any commands!
+warn:   NOT OK.
+```
 
 # Read More About Flatiron!
 
