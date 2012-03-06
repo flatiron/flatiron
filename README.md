@@ -4,7 +4,7 @@
 
 ![](http://flatironjs.org/img/flatiron.png)
 
-# Example http server:
+# Example HTTP Server:
 
 ```js
 var flatiron = require('flatiron'),
@@ -20,7 +20,7 @@ app.router.get('/', function () {
 app.start(8080);
 ```
 
-# Example cli application:
+# Example CLI Application:
 
 ```js
 // example.js
@@ -46,7 +46,7 @@ app.cmd('hello', function () {
 app.start();
 ```
 
-## Run it:
+## Run It:
 
 ```
 % node example.js hello
@@ -56,17 +56,17 @@ info:   hello world!
 
 ## Installation
 
-### Installing npm (node package manager)
+### Installing NPM (Node Package Manager)
 ```
   curl http://npmjs.org/install.sh | sh
 ```
 
-### Installing flatiron
+### Installing Flatiron
 ```
   [sudo] npm install flatiron
 ```
 
-### Installing union (required for `flatiron.plugins.http`)
+### Installing Union (Required for `flatiron.plugins.http`)
 ```
   npm install union
 ```
@@ -394,8 +394,9 @@ warn:   NOT OK.
 
 * [Scaling Isomorphic Javascript Code](http://blog.nodejitsu.com/scaling-isomorphic-javascript-code)
 * [Introducing Flatiron](http://blog.nodejitsu.com/introducing-flatiron)
+* [Writing CLI Apps with Flatiron](http://blog.jit.su/writing-cli-apps-with-flatiron)
 
-## Sub-projects
+## Sub-Projects
 
 * [Broadway](https://github.com/flatiron/broadway)
 * [Union](https://github.com/flatiron/union)
