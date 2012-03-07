@@ -268,14 +268,14 @@ app.start()
 
 When you run this program correctly, it will say hello:
 
-```bash
+```
 % node example.js hello person
 info:   hello person!
 ```
 
 If not, you get a friendly usage message:
 
-```bash
+```
 % node test.js hello
 help:   usage: node test.js hello <person>
 help:
@@ -302,7 +302,7 @@ app.log.info(JSON.stringify(app.argv));
 
 This prints:
 
-```bash
+```
 % node example3.js
 info:    {"_":[], "$0": "node ./example3.js"}
 ```
@@ -329,7 +329,7 @@ app.use(flatiron.plugins.cli, {
 app.start();
 ```
 
-```bash
+```
 % node example4.js 
 help:   Welcome to my app!
 help:   Your command didn't do anything.
@@ -373,7 +373,7 @@ app.start(function (err) {
 
 Here's how our app behaves:
 
-```bash
+```
 % node example5.js friendly
 info:   OK.
 
