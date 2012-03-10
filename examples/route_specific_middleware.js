@@ -4,7 +4,6 @@ var flatiron = require('../lib/flatiron'),
 app.use(flatiron.plugins.http);
 
 function nodejitsuOnly(req,res) {
-  console.log(arguments);  
   res.emit("next");
 }
 
