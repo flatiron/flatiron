@@ -11,7 +11,7 @@
     "url": "http://github.com/flatiron/flatiron.git" 
   },
   "dependencies": {
-    "broadway": "0.1.13",
+    "broadway": "0.1.14",
     "optimist": "0.3.1",
     "prompt": "0.1.12",
     "director": "1.0.9-1",
