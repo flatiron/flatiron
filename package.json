@@ -15,7 +15,8 @@
     "optimist": "0.3.1",
     "prompt": "0.1.12",
     "director": "1.0.9-1",
-    "pkginfo": "0.2.3"
+    "pkginfo": "0.2.3",
+    "union": "0.2.1"
   },
   "devDependencies": {
     "vows": "0.6.2"
