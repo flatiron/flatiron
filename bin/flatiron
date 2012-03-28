@@ -20,6 +20,8 @@ app.use(flatiron.plugins.cli, {
   }))
 });
 
+app.use(require('flatiron-cli-version'));
+
 //
 // Alias `flatiron create` to `flatiron new`.
 //
