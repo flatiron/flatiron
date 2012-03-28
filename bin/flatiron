@@ -5,7 +5,8 @@ var flatiron = require('../lib/flatiron'),
     app = flatiron.app;
 
 var actions = {
-  create: 'Creates an empty template for a flatiron application'
+  create: 'Creates an empty template for a flatiron application',
+  version: 'Show flatiron version',
 };
 
 app.use(flatiron.plugins.cli, {
@@ -18,6 +19,8 @@ app.use(flatiron.plugins.cli, {
     return '  ' + key + ' - ' + actions[key];
   }))
 });
+
+app.use(require('flatiron-cli-version'));
 
 //
 // Alias `flatiron create` to `flatiron new`.
