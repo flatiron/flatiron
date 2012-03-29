@@ -1,5 +1,0 @@
-{
-  "config": "#ROOT/config",
-  "lib": "#ROOT/lib",
-  "test": "#ROOT/test"
-}
