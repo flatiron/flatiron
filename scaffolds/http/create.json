@@ -1,0 +1,11 @@
+{
+  "dirs": [
+    "config",
+    "lib",
+    "test"
+  ],
+  "files": [
+    "app.js",
+    "config/config.json"
+  ]
+}
