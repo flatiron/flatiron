@@ -1,4 +1,4 @@
 {
   "app.js": "#ROOT/app.js",
-  "config/config.json": "#ROOT/config/config.json"
+  "config/config.json": "#CONFIG/config.json"
 }

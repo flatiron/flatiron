@@ -1,5 +1,5 @@
 {
-  "config": "#ROOT/config",
-  "lib": "#ROOT/lib",
-  "test": "#ROOT/test"
+  "config": "#CONFIG",
+  "lib": "#LIB",
+  "test": "#TEST"
 }
