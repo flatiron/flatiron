@@ -6,19 +6,19 @@ var flatiron = require('../../lib/flatiron'),
     app      = flatiron.app;
 
 app.use(flatiron.plugins.http, {
-  
+
   before: [function (req, res) {
-    
+
     fs.readFile(__dirname + '/index.html', function (err, data) {
-		  
+
       if (err) {
       	res.writeHead(500);
       	return res.end('Error loading index.html');
       }
-      
+
       res.writeHead(200);
       res.end(data);
-	    
+
     });
 
   }]
@@ -26,7 +26,7 @@ app.use(flatiron.plugins.http, {
 
 
 // Set the server to listen on port `8080`.
-// It is important to do this first, as app.server 
+// It is important to do this first, as app.server
 // isn't actually created until you start()
 app.start(8080);
 

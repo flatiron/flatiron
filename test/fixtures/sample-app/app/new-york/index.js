@@ -11,7 +11,7 @@ app.get('/blah', function () {
 
 app.sockets(function () {
   this.on(['foo' 'bar'], function (socket) {
-    
+
   })
 });
 
