@@ -2,9 +2,11 @@
   "name": "flatiron",
   "description": "An elegant blend of convention and configuration for building apps in Node.js and the browser",
   "version": "0.1.17",
-  "author": "Nodejitsu Inc <info@nodejitsu.com>",
-  "contributors": [
-    { "name": "Charlie Robbins", "email": "charlie@nodejitsu.com" }
+  "author": "Nodejitsu Inc. <info@nodejitsu.com>",
+  "maintainers": [
+    "indexzero <charlie@nodejitsu.com>",
+    "AvianFlu <avianflu@nodejitsu.com>",
+    "Marak <marak@nodejitsu.com>"
   ],
   "repository": {
     "type": "git",
@@ -27,5 +29,8 @@
   "scripts": {
     "test": "vows --spec --isolate"
   },
-  "engines": { "node": ">= 0.4.0" }
+  "engines": {
+    "node": ">= 0.4.0"
+  }
 }
+
