@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "union": "0.1.7"
+    "union": "0.3.x"
   },
   "devDependencies": {
-    "api-easy": "0.3.2",
-    "vows": "0.6.1"
+    "api-easy": "0.3.x",
+    "vows": "0.6.x"
   },
   "scripts": {
     "test": "vows --spec",
