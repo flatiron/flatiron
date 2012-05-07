@@ -5,8 +5,8 @@
   "dependencies": {
   },
   "devDependencies": {
-    "cli-easy": "0.1.0",
-    "vows": "0.6.1"
+    "cli-easy": "0.1.x",
+    "vows": "0.6.x"
   },
   "scripts": {
     "test": "vows --spec",
