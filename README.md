@@ -182,7 +182,8 @@ Valid options include:
 {
   "argvOptions": {}, // A configuration hash passed to the cli argv parser.
   "usage": [ "foo", "bar" ], // A message to show for cli usage. Joins arrays with `\n`.
-  "dir": require('path').join(__dirname, 'lib', 'commands') // A directory with commands to lazy-load
+  "dir": require('path').join(__dirname, 'lib', 'commands'), // A directory with commands to lazy-load
+  "notFoundUsage": false // Disable help messages when command not found
 }
 ```
 
