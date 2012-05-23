@@ -20,6 +20,7 @@
     "pkginfo": "0.2.3"
   },
   "devDependencies": {
+    "resourceful": "0.1.10",
     "vows": "0.6.2"
   },
   "main": "./lib/flatiron",
