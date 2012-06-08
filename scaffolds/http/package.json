@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "union": "0.1.7"
+    "union": "0.3.0"
   },
   "devDependencies": {
     "api-easy": "0.3.2",
