@@ -1,0 +1,11 @@
+{
+  "app": "#APP",
+  "app/resources": "#APP/resources",
+  "app/presenters": "#APP/presenters",
+  "app/views": "#APP/views",
+  "config": "#CONFIG",
+  "config/env": "#ENV",
+  "lib": "#LIB",
+  "log": "#LOG",
+  "test": "#TEST"
+}
