@@ -20,6 +20,28 @@ app.router.get('/', function () {
 app.start(8080);
 ```
 
+# Example HTTPS Server:
+
+```js
+var flatiron = require('flatiron'),
+    app = flatiron.app;
+
+app.use(flatiron.plugins.http, {
+  https: {
+    cert: 'path/to/cert.pem',
+    key: 'path/to/key.pem',
+    ca: 'path/to/ca.pem'
+  }
+});
+
+app.router.get('/', function () {
+  this.res.writeHead(200, { 'Content-Type': 'text/plain' });
+  this.res.end('Hello world!\n');
+});
+
+app.start(8080);
+```
+
 # Example CLI Application:
 
 ```js
