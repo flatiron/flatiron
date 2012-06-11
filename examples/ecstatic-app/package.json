@@ -1,0 +1,15 @@
+{
+  "name": "ecstatic-app",
+  "description": "An example flatiron app using ecstatic",
+  "version": "0.1.0",
+  "author": "Nodejitsu Inc. <info@nodejitsu.com>",
+  "dependencies": {
+    "flatiron": "0.1.17",
+    "ecstatic": "0.1.6"
+  },
+  "main": "./app",
+  "engines": {
+    "node": ">= 0.6.4"
+  }
+}
+
