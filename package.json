@@ -20,7 +20,9 @@
     "pkginfo": "0.2.3"
   },
   "devDependencies": {
+    "union": "0.3.0",
     "resourceful": "0.1.10",
+    "ecstatic": "0.1.6",
     "vows": "0.6.2"
   },
   "main": "./lib/flatiron",
@@ -28,7 +30,7 @@
     "flatiron": "./bin/flatiron"
   },
   "scripts": {
-    "test": "vows --spec --isolate"
+    "test": "vows --spec"
   },
   "engines": {
     "node": ">= 0.4.0"
