@@ -269,6 +269,26 @@ app.start();
 info:   High five to Flatiron!
 ```
 
+Callback will always be the last argument provided to a function assigned to command
+
+```js
+app.commands.highfive = function (person, cb) {
+  this.log.info('High five to ' + person + '!');
+  console.log(arguments);
+}
+```
+
+```
+% node example2b.js highfive Flatiron lol haha
+info:    High five to Flatiron!
+{
+  '0': 'Flatiron',
+  '1': 'lol',
+  '2': 'haha',
+  '3': [Function]
+}
+```
+
 ### Define Ad-Hoc Commands With `app.cmd(path, handler)`:
 
 This adds the cli routing path `path` to the app's CLI router, using the [director](https://github.com/flatiron/director) route handler `handler`, aliasing `app.router.on`. `cmd` routes are defined the same way as http routes, except that it uses ` ` (a space) for a delimiter instead of `/`.
