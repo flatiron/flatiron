@@ -165,6 +165,108 @@ app.router.get('/sandwich/:type', function (type) {
 
 `app.router` can also route against regular expressions and more! To learn more about director's advanced functionality, visit director's [project page](https://github.com/flatiron/director#readme).
 
+### Render Templates with `flatiron.plugins.view`:
+
+`flatiron.plugins.view` need to be loaded first inorder to work with a template library.
+
+```js
+var flatiron = require('flatiron')
+  , app = flatiron.app;
+
+app.use(flatiron.plugins.http);
+app.use(flatiron.plugins.view, { dir: __dirname + '/views' });
+```
+
+Use one of the available template library flatiron plugins
+
+* [flatiron-jade](http://github.com/pksunkara/flatiron-jade)
+* [flatiron-ejs](http://github.com/pksunkara/flatiron-ejs)
+
+```js
+app.use(require('flatiron-jade'));
+```
+
+A template is rendered inside a route as following
+
+```js
+app.router.get('/', function () {
+  this.render('index', { title: 'flatiron' });
+});
+```
+
+There are three types of locals
+
+#### Options Locals
+
+Locals which are given to the `this.render` function
+
+```js
+this.render('index', { title: 'flatiron' });
+```
+
+#### ThisArg Locals
+
+Locals which are assigned to `this.locals` before rendering
+
+```js
+this.locals.title = 'flatiron';
+this.render('index');
+```
+
+#### Global Locals
+
+Locals which are globally assigned by `app.local` api
+
+```js
+app.local('title', 'flatiron');
+
+app.router.get('/', function () {
+  this.render('index');
+});
+```
+
+__Options locals are given preference over ThisArg locals while ThisArg locals are given preference over Global locals__
+
+### Register Template Engines with `app.engine`:
+
+`app.engine` api is exposed by the view plugin which can be used to register template engines. It takes two arguments, first of which is extension name and the second is the main function of the engine. The main function of the engine is provided with three arguments path, options and callback respectively.
+
+For example ejs engine is registered as:
+
+```js
+app.engine('ejs', require('ejs').renderFile);
+```
+
+So, a flatiron app using view plugin and ejs engine can be directly written as
+
+```js
+var flatiron = require('flatiron')
+  , app = flatiron.app;
+
+app.use(flatiron.plugins.http);
+app.use(flatiron.plugins.view, { dir: __dirname + '/views' });
+
+app.engine('ejs', require('ejs').renderFile);
+
+app.router.get('/', function () {
+  this.render('index', { title: 'flatiron' });
+});
+```
+
+```ejs
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+  </body>
+</html>
+```
+
+__Beware, not all engines provide the required function. So one might want to use intermediate modules like flatiron-jade and flatiron-ejs__
 
 ### Access The Server with `app.server`:
 
