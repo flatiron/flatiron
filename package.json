@@ -15,14 +15,15 @@
   "dependencies": {
     "broadway": "0.2.3",
     "optimist": "0.3.4",
-    "prompt": "0.2.1",
+    "prompt": "0.2.2",
     "director": "1.1.0",
     "pkginfo": "0.2.3"
   },
   "devDependencies": {
-    "union": "0.3.0",
-    "resourceful": "0.1.10",
     "ecstatic": "0.1.6",
+    "request": "2.x.x",
+    "resourceful": "0.1.10",
+    "union": "0.3.3",
     "vows": "0.6.2"
   },
   "main": "./lib/flatiron",
