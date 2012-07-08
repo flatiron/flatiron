@@ -8,4 +8,8 @@ app.use(flatiron.plugins.ecstatic, {
   autoIndex: true
 });
 
+app.router.get('/headers', function () {
+  this.res.json(this.req.headers);
+});
+
 module.exports = app;
