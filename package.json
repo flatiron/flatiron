@@ -1,7 +1,7 @@
 {
   "name": "flatiron",
   "description": "An elegant blend of convention and configuration for building apps in Node.js and the browser",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "author": "Nodejitsu Inc. <info@nodejitsu.com>",
   "maintainers": [
     "indexzero <charlie@nodejitsu.com>",
@@ -13,7 +13,7 @@
     "url": "http://github.com/flatiron/flatiron.git"
   },
   "dependencies": {
-    "broadway": "0.2.3",
+    "broadway": "0.2.4",
     "optimist": "0.3.4",
     "prompt": "0.2.2",
     "director": "1.1.0",
