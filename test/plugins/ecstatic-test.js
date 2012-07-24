@@ -46,7 +46,7 @@ vows.describe('flatiron/plugins/ecstatic').addBatch({
         "should respond with JSON headers": function (err, res, body) {
           assert.isNull(err);
           assert.equal(res.statusCode, 200);
-          
+
           assert.equal(
             fs.readFileSync(path.join(appDir, 'app', 'assets', 'style.css'), 'utf8'),
             body

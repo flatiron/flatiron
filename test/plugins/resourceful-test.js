@@ -5,7 +5,7 @@
  * MIT LICENSE
  *
  */
- 
+
 var assert = require('assert'),
     resourceful = require('resourceful'),
     vows = require('vows');
