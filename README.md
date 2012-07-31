@@ -123,6 +123,22 @@ Virtually all additional functionality in flatiron comes from broadway plugins, 
 
 `flatiron.app` comes with a [`config`](https://github.com/flatiron/broadway/blob/master/lib/broadway/plugins/config.js) plugin pre-loaded, which adds configuration management courtesy [nconf](https://github.com/flatiron/nconf). `app.config` has the same api as the `nconf` object.
 
+The `literal` store is configured by default. If you want to use different stores you can easily attach them to the `app.config` instance.
+
+```js
+// add the `env` store to the config
+app.config.use('env');
+
+// add the `file` store the the config
+app.config.use('file', { file: 'path/to/config.json' });
+
+// or using an alternate syntax
+app.config.env().file({ file: 'path/to/config.json' });
+
+// and removing stores
+app.config.remove('literal');
+```
+
 ### `app.log`
 
 `flatiron.app` will also load a [`log`](https://github.com/flatiron/broadway/blob/master/lib/broadway/plugins/log.js) plugin during the init phase, which attaches a [winston container](https://github.com/flatiron/winston) to `app.log`. This logger is configured by combining the `app.options.log` property with the configuration retrieved from `app.config.get('log')`.
