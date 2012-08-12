@@ -15,7 +15,7 @@
   "dependencies": {
     "broadway": "0.2.5",
     "optimist": "0.3.4",
-    "prompt": "0.2.4",
+    "prompt": "0.2.5",
     "director": "1.1.0",
     "pkginfo": "0.2.3"
   },
