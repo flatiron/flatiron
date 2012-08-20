@@ -15,22 +15,24 @@ app.use(flatiron.plugins.http, {
       res.writeHead(200);
       res.end(data);
     });
+
   }]
 });
 
-app.use(flatiron.plugins.socketio)
 
 // Set the server to listen on port `8080`.
 // It is important to do this first, as app.server
 // isn't actually created until you start()
-app.start(8080, function(){
-  // Socket.io
-  // -------------------------------------------------- //
-  app.io.sockets.on('connection', function(socket) {
-    socket.emit('news', { hello: 'world' });
-    socket.on('my other event', function(data) {
-      console.log(data);
-    });
+app.start(8080);
+
+// Socket.io
+// -------------------------------------------------- //
+
+var io = require('socket.io').listen(app.server);
+
+io.sockets.on('connection', function(socket) {
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function(data) {
+    console.log(data);
   });
 });
-
