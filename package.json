@@ -15,14 +15,14 @@
   "dependencies": {
     "broadway": "0.2.5",
     "optimist": "0.3.4",
-    "prompt": "0.2.6",
+    "prompt": "0.2.7",
     "director": "1.1.0",
     "pkginfo": "0.2.3"
   },
   "devDependencies": {
     "ecstatic": "0.1.6",
     "request": "2.x.x",
-    "resourceful": "0.1.10",
+    "resourceful": "0.3.x",
     "union": "0.3.3",
     "vows": "0.6.2"
   },
