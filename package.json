@@ -20,11 +20,11 @@
     "pkginfo": "0.2.3"
   },
   "devDependencies": {
-    "ecstatic": "0.1.6",
+    "st": "0.0.x",
     "request": "2.x.x",
     "resourceful": "0.3.x",
-    "union": "0.3.3",
-    "vows": "0.6.2"
+    "union": "0.3.x",
+    "vows": "0.6.x"
   },
   "main": "./lib/flatiron",
   "bin": {
