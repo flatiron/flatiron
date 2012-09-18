@@ -1,5 +1,5 @@
 /*
- * ecstatic-test.js: Tests for flatiron app(s) using the ecstatic plugin
+ * static-test.js: Tests for flatiron app(s) using the static plugin
  *
  * (C) 2011, Nodejitsu Inc.
  * MIT LICENSE
@@ -10,20 +10,18 @@ var assert = require('assert'),
     fs = require('fs'),
     path = require('path'),
     request = require('request'),
-    resourceful = require('ecstatic'),
     vows = require('vows');
 
-var appDir = path.join(__dirname, '..', '..', 'examples', 'ecstatic-app'),
+var appDir = path.join(__dirname, '..', '..', 'examples', 'static-app'),
     app = require(path.join(appDir, 'app'));
 
-vows.describe('flatiron/plugins/ecstatic').addBatch({
-  "A flatiron app using `flatiron.plugins.ecstatic": {
+vows.describe('flatiron/plugins/static').addBatch({
+  "A flatiron app using `flatiron.plugins.static": {
     topic: app,
     "should extend the app correctly": function (app) {
-      assert.isString(app._ecstaticDir);
+      assert.isString(app._staticDir);
       assert.isFunction(app.static);
       assert.isFunction(app.http.before[0]);
-      assert.equal(app.http.before[0].length, 3);
     },
     "when the application is running": {
       topic: function () {

@@ -1,11 +1,11 @@
 {
-  "name": "ecstatic-app",
-  "description": "An example flatiron app using ecstatic",
+  "name": "static-app",
+  "description": "An example flatiron app using static plugin",
   "version": "0.1.0",
   "author": "Nodejitsu Inc. <info@nodejitsu.com>",
   "dependencies": {
-    "flatiron": "0.1.17",
-    "ecstatic": "0.1.6"
+    "flatiron": "0.2.x",
+    "st": "0.1.x"
   },
   "main": "./app",
   "engines": {
