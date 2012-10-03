@@ -5,7 +5,7 @@
   "author": "Nodejitsu Inc. <info@nodejitsu.com>",
   "dependencies": {
     "flatiron": "0.2.x",
-    "st": "0.1.x"
+    "st": "0.0.x"
   },
   "main": "./app",
   "engines": {

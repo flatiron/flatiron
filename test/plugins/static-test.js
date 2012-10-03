@@ -27,7 +27,7 @@ vows.describe('flatiron/plugins/static').addBatch({
       topic: function () {
         app.start(8080, this.callback)
       },
-      "a GET to /": {
+      "a GET to /headers": {
         topic: function () {
           request('http://localhost:8080/headers', this.callback);
         },
@@ -41,7 +41,7 @@ vows.describe('flatiron/plugins/static').addBatch({
         topic: function () {
           request('http://localhost:8080/style.css', this.callback);
         },
-        "should respond with JSON headers": function (err, res, body) {
+        "should respond with style.css file": function (err, res, body) {
           assert.isNull(err);
           assert.equal(res.statusCode, 200);
 
