@@ -201,7 +201,7 @@ app.use(flatiron.plugins.http, {
 
 You can read more about these options on the [union project page](https://github.com/flatiron/union#readme).
 
-### Start The Server with `app.start(<host>, port, <callback(err)>)`
+### Start The Server with `app.start(port, <host>, <callback(err)>)`
 
 This method will both call `app.init` (which will call any asynchronous initialization steps on loaded plugins) and start the http server with the given arguments. For example, the following will start your flatiron http server on port 8080:
 
