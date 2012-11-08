@@ -1,5 +1,5 @@
 /*
- * static-test.js: Tests for flatiron app(s) using the static plugin
+ * ecstatic-test.js: Tests for flatiron app(s) using the ecstatic plugin
  *
  * (C) 2011, Nodejitsu Inc.
  * MIT LICENSE
@@ -10,24 +10,26 @@ var assert = require('assert'),
     fs = require('fs'),
     path = require('path'),
     request = require('request'),
+    resourceful = require('ecstatic'),
     vows = require('vows');
 
-var appDir = path.join(__dirname, '..', '..', 'examples', 'static-app'),
+var appDir = path.join(__dirname, '..', '..', 'examples', 'ecstatic-app'),
     app = require(path.join(appDir, 'app'));
 
-vows.describe('flatiron/plugins/static').addBatch({
-  "A flatiron app using `flatiron.plugins.static": {
+vows.describe('flatiron/plugins/ecstatic').addBatch({
+  "A flatiron app using `flatiron.plugins.ecstatic": {
     topic: app,
     "should extend the app correctly": function (app) {
-      assert.isString(app._staticDir);
+      assert.isString(app._ecstaticDir);
       assert.isFunction(app.static);
       assert.isFunction(app.http.before[0]);
+      assert.equal(app.http.before[0].length, 3);
     },
     "when the application is running": {
       topic: function () {
         app.start(8080, this.callback)
       },
-      "a GET to /headers": {
+      "a GET to /": {
         topic: function () {
           request('http://localhost:8080/headers', this.callback);
         },
@@ -41,7 +43,7 @@ vows.describe('flatiron/plugins/static').addBatch({
         topic: function () {
           request('http://localhost:8080/style.css', this.callback);
         },
-        "should respond with style.css file": function (err, res, body) {
+        "should respond with JSON headers": function (err, res, body) {
           assert.isNull(err);
           assert.equal(res.statusCode, 200);
 
