@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "author": "Nodejitsu Inc. <info@nodejitsu.com>",
   "dependencies": {
-    "flatiron": "0.1.17",
-    "resourceful": "0.1.10"
+    "flatiron": "0.3.x",
+    "resourceful": "0.3.x"
   },
   "main": "./app",
   "engines": {

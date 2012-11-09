@@ -20,7 +20,7 @@
     "pkginfo": "0.2.3"
   },
   "devDependencies": {
-    "st": "0.0.11",
+    "st": "0.1.x",
     "request": "2.x.x",
     "resourceful": "0.3.x",
     "union": "0.3.x",
