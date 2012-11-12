@@ -16,7 +16,7 @@
     "broadway": "0.2.5",
     "optimist": "0.3.4",
     "prompt": "0.2.8",
-    "director": "1.1.6",
+    "director": "1.1.8",
     "pkginfo": "0.2.3"
   },
   "devDependencies": {
