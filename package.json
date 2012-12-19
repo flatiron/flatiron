@@ -24,7 +24,7 @@
     "request": "2.x.x",
     "resourceful": "0.3.x",
     "union": "0.3.x",
-    "vows": "0.6.x"
+    "vows": "0.7.x"
   },
   "main": "./lib/flatiron",
   "bin": {
