@@ -11,7 +11,7 @@ var assert = require('assert'),
     vows = require('vows');
 
 var app = require('../../examples/resourceful-app/app');
-app.config.set('database', { uri: 'http://localhost:5894/test' });
+app.config.set('database', { uri: 'http://localhost:5984/test' });
 
 vows.describe('flatiron/plugins/resourceful').addBatch({
   "A flatiron app using `flatiron.plugins.resourceful": {
