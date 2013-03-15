@@ -1,0 +1,11 @@
+{
+  ".gitignore": "#ROOT/.gitignore",
+  "app.js": "#ROOT/app.js",
+  "app/resources/.gitkeep": "#APP/resources/.gitkeep",
+  "app/presenters/.gitkeep": "#APP/presenters/.gitkeep",
+  "app/views/.gitkeep": "#APP/views/.gitkeep",
+  "config/env/development.json": "#ENV/development.json",
+  "config/env/production.json": "#ENV/production.json",
+  "config/env/test.json": "#ENV/test.json",
+  "log/.gitkeep": "#LOG/.gitkeep"
+}
