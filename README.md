@@ -101,7 +101,7 @@ info:   hello world!
 
 ```js
 var flatiron = require('flatiron'),
-    app = require('app');
+    app = flatiron.app;
 
 var hello = {
   attach: function (options) {
