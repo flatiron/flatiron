@@ -11,6 +11,7 @@ var assert = require('assert'),
     vows = require('vows');
 
 var app = require('../../examples/resourceful-app/app');
+app.config.set('database', { uri: 'http://localhost:5984/test' });
 
 vows.describe('flatiron/plugins/resourceful').addBatch({
   "A flatiron app using `flatiron.plugins.resourceful": {
@@ -26,7 +27,12 @@ vows.describe('flatiron/plugins/resourceful').addBatch({
       },
       "it should use the correct engine": function () {
         assert.equal(app.resources.Creature.engine, resourceful.engines.Memory);
+      },
+      "it should load the database config option": function () {
+        var resourceful = app.config.get('resourceful');
+        var database = app.config.get('database');
+        assert.equal(resourceful.uri, database.uri);
       }
-    }
+    },
   }
 }).export(module);
