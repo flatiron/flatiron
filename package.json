@@ -22,7 +22,7 @@
     "st": "0.1.x",
     "request": "2.x.x",
     "resourceful": "0.3.x",
-    "union": "0.3.x",
+    "union": "0.4.x",
     "vows": "0.7.x"
   },
   "main": "./lib/flatiron",
