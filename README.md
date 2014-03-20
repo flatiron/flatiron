@@ -374,6 +374,51 @@ info:    {"_":[], "$0": "node ./example3.js"}
 
 Awesome!
 
+#### Overide `prompt.get()` call with optimist's argv
+
+Sometimes you'd want to pass in the arguments that your application
+needs directly from the command line instead of asking for user input.
+This can easily be done using optimist and prompt.
+
+To do this, you must use `override = true` in your config:
+
+```js
+var flatiron = require('flatiron'),
+    app = flatiron.app;
+
+app.use(flatiron.plugins.cli, {
+  argv: {
+    param: {
+      alias: p,
+      string: true
+    }
+  },
+  prompt: {
+    override: true
+  }
+});
+```
+Then if you try to read param from prompt, you will get the value from
+CLI.
+
+```js
+app.cmd('hello', function() {
+  app.prompt.get('param', function(err, result) {
+    app.log.info('hello ' + result.param + '!');
+  });
+});
+```
+
+Here is how it looks from the command line:
+
+```bash
+mac:~/$ my_program hello
+prompt: param: nuaavee
+info:    hello nuaavee!
+mac:~/$ my_program hello --param nuaavee
+info:    hello nuaavee!
+```
+
 ### Add a Default Help Command with `options.usage`:
 
 When attaching the CLI plugin, just specify options.usage to get a friendly default message for when there aren't any matching routes:
